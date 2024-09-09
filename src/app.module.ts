@@ -3,6 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { CommonModule } from './common/common.module';
+import { ProductsModule } from './products/products.module';
+import { FeedModule } from './feed/feed.module';
 
 @Module({
   imports: [
@@ -21,10 +23,8 @@ import { CommonModule } from './common/common.module';
     }),
     AuthModule,
     CommonModule,
-    //access like this, http://localhost:3000/products/image.png (not public/products)
-    // ServeStaticModule.forRoot({
-    //   rootPath: join(__dirname, '..', 'public'),
-    // }),
+    ProductsModule,
+    FeedModule,
   ],
   controllers: [],
   providers: [],

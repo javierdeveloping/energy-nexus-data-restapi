@@ -42,6 +42,9 @@ export class User {
   @Column('text', { array: true, default: ['user'] })
   roles: string[];
 
+  // @OneToMany(() => Product, (product) => product.user)
+  // product: Product;
+
   @BeforeInsert()
   checkFieldsBeforeInsert() {
     this.email = this.email.toLowerCase().trim();
