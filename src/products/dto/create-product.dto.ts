@@ -1,6 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsIn, IsOptional, IsString, MinLength } from 'class-validator';
 
+export enum PRODUCT_TYPES {
+  FUTURE = 'future',
+  CFD = 'cfd',
+  STOCK = 'stock',
+  OUT_OF_STANDARD = 'out of standard',
+}
+
 export class CreateProductDto {
   @ApiProperty({
     description: 'Product title (unique)',
@@ -21,7 +28,7 @@ export class CreateProductDto {
   @IsOptional()
   slug?: string;
 
-  @ApiProperty({ enum: ['futures', 'cfd', 'stock', 'out of standard'] })
-  @IsIn(['futures', 'cfd', 'stock', 'out of standard'])
+  @ApiProperty({ enum: Object.values(PRODUCT_TYPES) })
+  @IsIn(Object.values(PRODUCT_TYPES))
   type: string;
 }

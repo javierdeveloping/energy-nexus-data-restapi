@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { CommonModule } from './common/common.module';
 import { ProductsModule } from './products/products.module';
 import { FeedModule } from './feed/feed.module';
+import { SeedModule } from './seed/seed.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { FeedModule } from './feed/feed.module';
     CommonModule,
     ProductsModule,
     FeedModule,
+    SeedModule,
   ],
   controllers: [],
   providers: [],

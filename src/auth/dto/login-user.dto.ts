@@ -9,7 +9,7 @@ import {
 
 export class LoginUserDto {
   @ApiProperty({
-    example: 'myuser@mockmail.com',
+    example: 'user@user.com',
     description: 'User email',
     nullable: false,
   })
@@ -19,9 +19,9 @@ export class LoginUserDto {
 
   @ApiProperty({
     example:
-      'For this application, especially with HTTP, DO NOT insert passwords that can compromise your other services or accounts. Passwords are not going to be encrypted using HTTP. This field should be the password that was used to create a user for this application (no recovery service yet).',
+      'For this application, especially with HTTP, DO NOT insert passwords that can compromise your other services or accounts. Passwords are not going to be encrypted using HTTP. This field should be the password that was used to create a user for this application (no recovery service yet). Example: Abc123456',
     description:
-      'For this application, especially with HTTP, DO NOT insert passwords that can compromise your other services or accounts. Passwords are not going to be encrypted using HTTP. This field should be the password that was used to create a user for this application (no recovery service yet).',
+      'For this application, especially with HTTP, DO NOT insert passwords that can compromise your other services or accounts. Passwords are not going to be encrypted using HTTP. This field should be the password that was used to create a user for this application (no recovery service yet). Example: Abc123456',
     nullable: false,
   })
   @IsString()

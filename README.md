@@ -15,6 +15,15 @@ App deployed on AWS is using http protocol.
 
 [http:51.92.82.16:3001/api](http:51.92.82.16:3001/api)
 
+```
+User: user@user.com
+Password: Abc123456
+
+User: admin@admin.com
+Password: Abc123456
+(with admin roles)
+```
+
 ### Instructions for local setup
 
 1.Clone the project
@@ -41,13 +50,13 @@ docker-compose up -d
 pnpm run start:dev
 ```
 
-7.Execute seed (if available)
+7.Execute seed
 
 ```
 http://localhost:{{PORT}}/api/seed
 ```
 
-8.Ater creating a user, go to your database and set up admin role for this user. (pending seed or an endpoint to promote users)
+8.Ater creating a new user, go to your database and set up admin role for this user. (pending seed or an endpoint to promote users)
 
 9.Enjoy the API in swagger
 
