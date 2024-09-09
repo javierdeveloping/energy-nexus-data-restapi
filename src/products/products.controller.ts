@@ -9,17 +9,22 @@ import {
   Post,
   Query,
 } from '@nestjs/common';
+import {
+  ApiBearerAuth,
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
+import { Auth } from 'src/auth/decorators/auth.decorator.ts.decorator';
+import { GetUser } from 'src/auth/decorators/get-user.decorator';
+import { User } from 'src/auth/entities/user.entity';
+import { ValidRoles } from 'src/auth/interfaces';
 import { PaginationDto } from 'src/common/dtos/pagination.dto';
+import { APPLICATION_API_TAGS } from 'src/swagger.config';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
-import { ProductsService } from './products.service';
-import { Auth } from 'src/auth/decorators/auth.decorator.ts.decorator';
-import { ValidRoles } from 'src/auth/interfaces';
-import { User } from 'src/auth/entities/user.entity';
-import { GetUser } from 'src/auth/decorators/get-user.decorator';
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { APPLICATION_API_TAGS } from 'src/swagger.config';
 import { Product } from './entities';
+import { ProductsService } from './products.service';
 
 @ApiTags(APPLICATION_API_TAGS.PRODUCTS)
 @Controller('products')
@@ -29,6 +34,7 @@ export class ProductsController {
 
   @Post()
   @Auth(ValidRoles.admin)
+  @ApiBearerAuth('access-token')
   @ApiOperation({
     summary: 'Create a new product',
     description:
@@ -80,6 +86,7 @@ export class ProductsController {
 
   @Patch(':id')
   @Auth(ValidRoles.admin)
+  @ApiBearerAuth('access-token')
   @ApiOperation({
     summary: 'Updates a product',
     description:
@@ -108,6 +115,7 @@ export class ProductsController {
   })
   @ApiResponse({ status: 400, description: 'Bad request' })
   @ApiResponse({ status: 403, description: 'Forbidden. Token related' })
+  @ApiBearerAuth('access-token')
   @Auth(ValidRoles.admin)
   remove(@Param('id', ParseUUIDPipe) id: string) {
     return this.productsService.remove(id);
