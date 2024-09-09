@@ -5,7 +5,17 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-#Energy Nexus Data RESTful API
+# Energy Nexus Data RESTful API
+
+### Live Demo
+
+App deployed on AWS is using http protocol.
+
+:warning: DO NOT USE password that could compromise your online services or accounts
+
+[http:51.92.82.16:3001/api](http:51.92.82.16:3001/api)
+
+### Instructions for local setup
 
 1.Clone the project
 
