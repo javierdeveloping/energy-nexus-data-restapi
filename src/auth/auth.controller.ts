@@ -21,7 +21,8 @@ export class AuthController {
   @Post('register')
   @ApiOperation({
     summary: 'Create a new user',
-    description: 'This endpoint creates a new user with the provided details.',
+    description:
+      'This endpoint creates a new user with the provided details. In this case, with unsecured HTTP protocol, never insert passwords that could compromise other of your services or accounts',
   })
   @ApiResponse({
     status: 201,
@@ -37,7 +38,7 @@ export class AuthController {
   @ApiOperation({
     summary: 'Login user',
     description:
-      'This endpoint retrieves a Json Web Token that user can use to interact with some protected endpoints',
+      'This endpoint retrieves a Json Web Token that user can use to interact with some protected endpoints. In this case, with unsecured HTTP protocol, never insert passwords that could compromise other of your services or accounts',
   })
   login(@Body() loginUserDto: LoginUserDto) {
     return this.authService.login(loginUserDto);

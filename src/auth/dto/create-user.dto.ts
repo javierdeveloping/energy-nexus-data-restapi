@@ -19,7 +19,7 @@ export class CreateUserDto {
 
   @ApiProperty({
     example:
-      'The password must have a Uppercase, lowercase letter and a number',
+      'For this application, especially with HTTP, use test passwords, DO NOT use a password that can compromise your other services or accounts. Password are not going to be encrypted using HTTP. The password must have a Uppercase, lowercase letter and a number',
     description:
       'The password must have a Uppercase, lowercase letter and a number',
     nullable: false,

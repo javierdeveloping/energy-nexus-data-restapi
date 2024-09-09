@@ -18,8 +18,10 @@ export class LoginUserDto {
   email: string;
 
   @ApiProperty({
+    example:
+      'For this application, especially with HTTP, DO NOT insert passwords that can compromise your other services or accounts. Passwords are not going to be encrypted using HTTP. This field should be the password that was used to create a user for this application (no recovery service yet).',
     description:
-      'Password that was used to create the user (no recovery service)',
+      'For this application, especially with HTTP, DO NOT insert passwords that can compromise your other services or accounts. Passwords are not going to be encrypted using HTTP. This field should be the password that was used to create a user for this application (no recovery service yet).',
     nullable: false,
   })
   @IsString()
