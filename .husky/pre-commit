@@ -5,5 +5,8 @@ pnpm run format
 
 npx eslint .
 
+#pending tests
+#pnpm run test
+
 # Print a message after tests are run
 echo "Finished pre-commit hook."

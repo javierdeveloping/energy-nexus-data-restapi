@@ -36,3 +36,11 @@ pnpm run start:dev
 ```
 http://localhost:{{PORT}}/api/seed
 ```
+
+8.Ater creating a user, go to your database and set up admin role for this user. (pending seed or an endpoint to promote users)
+
+9.Enjoy the API in swagger
+
+```
+http://localhost:{{PORT}}/api
+```
