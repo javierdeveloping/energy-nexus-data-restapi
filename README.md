@@ -9,9 +9,11 @@
 
 ### Live Demo
 
-App deployed on AWS is using http protocol.
+:warning: App deployed on AWS is using insecure HTTP protocol.
 
-:warning: DO NOT USE password that could compromise your online services or accounts
+:warning: HTTP protocol DOES NOT encrypt passwords and they can be intercepted and read by anyone with access to the network traffic.
+
+:warning: In this application, when entering passwords to create new users or login as an already existing, DO NOT ENTER passwords that could compromise any of your external online services or accounts.
 
 [http:51.92.82.16:3001/api](http:51.92.82.16:3001/api)
 
